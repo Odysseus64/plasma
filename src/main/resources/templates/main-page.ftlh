@@ -8,6 +8,7 @@
 </head>
 <body>
 <div>
+
     <#list reg as registor>
         <h2>${registor.id}</h2>
         <h2>${registor.name}</h2>

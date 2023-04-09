@@ -19,7 +19,7 @@ public class RegController {
     public String mainPage(Model model) {
         List<Registration> regList = Data.getRegistrations().stream().sorted(Comparator.comparing(Registration::getNickName).reversed()).toList();
         regList.forEach(System.out::println);
-        model.addAttribute("reg", regList);
+        model.addAttribute("reg", "Hello");
         return "main-page";
     }
     @GetMapping("get-all")
