@@ -7,6 +7,13 @@
     <title>Main-Page</title>
 </head>
 <body>
+<div>
+    </h2>
+        <#list reg as registor>
+
+        </#list>
+    <h2>
+</div>
 <form>
     <label for="username">Имя пользователя:</label>
     <input type="text" id="username" name="username" required>
