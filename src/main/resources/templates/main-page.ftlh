@@ -8,11 +8,13 @@
 </head>
 <body>
 <div>
-    </h2>
-        <#list reg as registor>
-
-        </#list>
-    <h2>
+    <#list reg as registor>
+        <h2>${registor.id}</h2>
+        <h2>${registor.name}</h2>
+        <h2>${registor.nickName}</h2>
+        <h2>${registor.email}</h2>
+        <h2>${registor.password}</h2>
+    </#list>
 </div>
 <form>
     <label for="username">Имя пользователя:</label>
