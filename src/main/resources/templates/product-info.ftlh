@@ -1,5 +1,6 @@
-<!DOCTYPE html><html>
-    <meta charset="ISO-8859-1">
+<!DOCTYPE html>
+<html>
+<meta charset="ISO-8859-1">
 <head>
     <title>Auto Star</title>
 </head>
@@ -18,57 +19,47 @@
 </form>
 </body>
 </html>
-<style>
-    h1 {
-        font-size: 36px;
-        color: #333;
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    h2 {
-        font-size: 24px;
-        color: #666;
-        margin-top: 30px;
-    }
-
-    body {
+<style>body {
         font-family: Arial, sans-serif;
-        font-size: 16px;
-        line-height: 1.5;
-        color: #666;
-        background-color: #f9f9f9;
-        padding: 20px;
+        background-color: #f0f0f0;
+    }
+
+    h1 {
+        color: #333;
+        font-size: 36px;
+        text-align: center;
     }
 
     hr {
-        border: none;
+        border: 0;
         border-top: 1px solid #ccc;
-        margin: 30px 0;
+        margin: 20px 0;
+    }
+
+    h2 {
+        color: #666;
+        font-size: 24px;
     }
 
     b {
         font-weight: bold;
-        color: #333;
     }
 
     form {
         display: inline-block;
-        margin-top: 30px;
+        margin-top: 20px;
     }
 
-    input[type=submit] {
-        background-color: #f44336;
-        border: none;
+    input[type="submit"] {
+        background-color: #e74c3c;
         color: #fff;
+        border: none;
         padding: 10px 20px;
         font-size: 16px;
         cursor: pointer;
-        border-radius: 5px;
     }
 
-    input[type=submit]:hover {
-        background-color: #e53935;
+    input[type="submit"]:hover {
+        background-color: #c0392b;
     }
-
 </style>

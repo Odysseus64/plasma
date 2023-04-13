@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<meta charset="ISO-8859-1">
 <head>
     <title>Auto Star</title>
 </head>
@@ -29,99 +30,83 @@
     City: <input type="text" name="City" placeholder="City"><br><br>
     Owner: <input type="text" name="Owner" placeholder="Owner"><br><br>
     Price: <input type="number" name="Price" placeholder="Price"><br><br>
-    1 Photo: <input type="file" name="file1" placeholder="Photo"><br><br>
-    2 Photo: <input type="file" name="file2" placeholder="Photo"><br><br>
-    3 Photo: <input type="file" name="file3" placeholder="Photo"><br><br>
     <input type="submit" value="Add product">
 </form>
 </body>
 </html>
+
 <style>
-    h1 {
-        font-size: 36px;
-        color: #333;
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    h2 {
-        font-size: 24px;
-        color: #666;
-        margin-top: 30px;
-    }
-
-    h3 {
-        font-size: 20px;
-        color: #333;
-        margin-top: 30px;
-    }
-
     body {
         font-family: Arial, sans-serif;
-        font-size: 16px;
-        line-height: 1.5;
+        background-color: #f0f0f0;
+    }
+
+    h1 {
         color: #333;
-        background-color: #f9f9f9;
-        padding: 20px;
+        font-size: 36px;
+        text-align: center;
     }
 
     hr {
-        border: none;
+        border: 0;
         border-top: 1px solid #ccc;
-        margin: 30px 0;
+        margin: 20px 0;
     }
 
-    b {
-        font-weight: bold;
-        color: #333;
+    h2, h3 {
+        color: #666;
+        font-size: 24px;
+        margin-top: 40px;
     }
 
     form {
         display: inline-block;
-        margin-top: 30px;
+        margin-top: 20px;
     }
 
-    input[type=text], input[type=number] {
+    label {
+        display: inline-block;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    input[type="text"], input[type="number"] {
         padding: 10px;
-        border-radius: 5px;
+        font-size: 16px;
         border: 1px solid #ccc;
+        border-radius: 5px;
         width: 100%;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
     }
 
-    input[type=submit] {
-        background-color: #f44336;
-        border: none;
+    input[type="submit"], input[type="button"] {
+        background-color: #e74c3c;
         color: #fff;
+        border: none;
         padding: 10px 20px;
         font-size: 16px;
         cursor: pointer;
-        border-radius: 5px;
     }
 
-    input[type=submit]:hover {
-        background-color: #e53935;
+    input[type="submit"]:hover, input[type="button"]:hover {
+        background-color: #c0392b;
     }
 
-    .product {
-        margin-bottom: 30px;
+    .products {
+        margin-top: 40px;
+    }
+
+    .products p {
+        margin: 0;
         padding: 10px;
-        border-radius: 5px;
         background-color: #fff;
         border: 1px solid #ccc;
+        border-radius: 5px;
     }
 
-    .product p {
-        margin: 0;
-    }
-
-    .product a {
+    .products p a {
         text-decoration: none;
-        color: #f44336;
-    }
-
-    .product a:hover {
-        color: #e53935;
+        color: #fff;
     }
 
 </style>
