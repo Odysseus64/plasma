@@ -1,7 +1,7 @@
 package web.controllers;
 
 import web.model.Auto;
-import web.servie.AutoService;
+import web.service.AutoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

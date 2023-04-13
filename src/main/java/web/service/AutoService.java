@@ -1,4 +1,4 @@
-package web.servie;
+package web.service;
 
 import web.model.Auto;
 import web.repository.AutoRepository;
