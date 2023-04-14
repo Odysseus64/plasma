@@ -7,36 +7,36 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import web.model.Auto;
-import web.servie.AutoService;
+import web.model.TestModel;
+import web.servie.TestService;
 
 
 @Controller
 @RequiredArgsConstructor
-public class AutoController {
-    private final AutoService autoService;
+public class TestController {
+    private final TestService testService;
 
     @GetMapping("/")
     public String product(@RequestParam(name = "title", required = false) String title, Model model) {
-        model.addAttribute("auto", autoService.listAuto(title));
-        return "products";
+        model.addAttribute("auto", testService.listAuto(title));
+        return "test";
     }
 
     @GetMapping("/product/{id}")
     public String productInfo(@PathVariable Long id, Model model) {
-        model.addAttribute("prom", autoService.getAutoById(id));
-        return "product-info";
+        model.addAttribute("prom", testService.getAutoById(id));
+        return "test-info";
     }
 
     @PostMapping("/product/create")
-    public String createProduct(Auto auto) {
-        autoService.save(auto);
+    public String createProduct(TestModel testModel) {
+        testService.save(testModel);
         return "redirect:/";
     }
 
     @PostMapping("/product/delete/{id}")
     public String deleteProduct(@PathVariable Long id) {
-        autoService.delete(id);
+        testService.delete(id);
         return "redirect:/";
     }
 }
