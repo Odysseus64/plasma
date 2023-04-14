@@ -1,13 +1,12 @@
-package web.controllers;
+package com.example.Auto_Star.controllers;
 
-import web.model.Auto;
-import web.service.AutoService;
+import com.example.Auto_Star.model.Auto;
+import com.example.Auto_Star.servie.AutoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
 
 @Controller
 @RequiredArgsConstructor
@@ -27,14 +26,14 @@ public class AutoController {
     }
 
     @PostMapping("/product/create")
-    public String createProduct(Auto auto) throws IOException {
-        autoService.saveProduct(auto);
+    public String createProduct(Auto auto) {
+        autoService.save(auto);
         return "redirect:/";
     }
 
     @PostMapping("/product/delete/{id}")
     public String deleteProduct(@PathVariable Long id) {
-        autoService.deleteProduct(id);
+        autoService.delete(id);
         return "redirect:/";
     }
 }

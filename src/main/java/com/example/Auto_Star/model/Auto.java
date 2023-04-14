@@ -1,4 +1,4 @@
-package web.model;
+package com.example.Auto_Star.model;
 
 import jakarta.persistence.*;
 import lombok.*;
