@@ -1,7 +1,7 @@
-package com.example.Auto_Star.repository;
+package web.repository;
 
-import com.example.Auto_Star.model.Teacher;
 import org.springframework.data.jpa.repository.JpaRepository;
+import web.model.Teacher;
 
 public interface TeacherRepository extends JpaRepository<Teacher, Long> {
 }
