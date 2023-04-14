@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import web.models.TestModel;
-import web.repository.Test;
+import web.repository.TestRepository;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class TestService {
-    private final Test autoRepository;
+    private final TestRepository autoRepository;
 
     public List<TestModel> listAuto(String title) {
         log.info("Successfully found {}", title);
