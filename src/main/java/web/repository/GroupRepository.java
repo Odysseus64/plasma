@@ -1,7 +1,7 @@
 package web.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import web.model.Group;
+import web.models.Groups;
 
-public interface GroupRepository extends JpaRepository<Group, Long> {
+public interface GroupRepository extends JpaRepository<Groups, Long> {
 }

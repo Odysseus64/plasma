@@ -1,28 +1,27 @@
-package web.model;
+package web.models;
 
 import jakarta.persistence.*;
-import lombok.Getter;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
 import java.util.List;
 
 @Entity
-@NoArgsConstructor
-@Getter
-@Setter
-@ToString
 @Table(name = "company")
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String name;
+    private int id;
+    @Column(name = "companyName")
+    private String companyName;
+    @Column(name = "locatedCountry")
     private String locatedCountry;
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
-    private List<Course> courseList;
-
+    private List<Course> courses;
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
-    private List<Group> group;
+    private List<Groups> groups;
 }
