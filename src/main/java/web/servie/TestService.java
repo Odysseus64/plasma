@@ -3,7 +3,7 @@ package web.servie;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import web.model.TestModel;
+import web.models.TestModel;
 import web.repository.Test;
 
 import java.util.List;

@@ -1,7 +1,7 @@
 package web.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import web.model.Course;
+import web.models.Course;
 
 public interface CourseRepository extends JpaRepository<Course, Long> {
 }

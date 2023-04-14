@@ -1,7 +1,7 @@
 package web.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import web.model.TestModel;
+import web.models.TestModel;
 
 import java.util.List;
 
