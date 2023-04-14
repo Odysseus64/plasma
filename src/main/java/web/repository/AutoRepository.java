@@ -1,7 +1,7 @@
-package com.example.Auto_Star.repository;
+package web.repository;
 
-import com.example.Auto_Star.model.Auto;
 import org.springframework.data.jpa.repository.JpaRepository;
+import web.model.Auto;
 
 import java.util.List;
 

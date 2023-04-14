@@ -1,11 +1,14 @@
-package com.example.Auto_Star.controllers;
+package web.controllers;
 
-import com.example.Auto_Star.model.Auto;
-import com.example.Auto_Star.servie.AutoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import web.model.Auto;
+import web.servie.AutoService;
 
 
 @Controller

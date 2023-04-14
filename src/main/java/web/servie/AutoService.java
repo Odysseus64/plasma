@@ -1,10 +1,10 @@
-package com.example.Auto_Star.servie;
+package web.servie;
 
-import com.example.Auto_Star.model.Auto;
-import com.example.Auto_Star.repository.AutoRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import web.model.Auto;
+import web.repository.AutoRepository;
 
 import java.util.List;
 
