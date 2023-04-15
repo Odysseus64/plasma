@@ -4,8 +4,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import web.models.Company;
 import web.servie.CompanyService;
+
 
 @Controller
 @RequiredArgsConstructor
@@ -13,4 +13,9 @@ import web.servie.CompanyService;
 public class CompanyController {
     private final CompanyService service;
 
+    @GetMapping("/get/all")
+    public String getAll(Model model) {
+        model.addAttribute("all", service.findAll());
+        return "/company/company-list";
+    }
 }
