@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import web.models.Groups;
+import web.repository.GroupRepository;
 import web.servie.metods.GroupMethods;
 
 import java.util.List;
@@ -12,29 +13,38 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class GroupService implements GroupMethods {
+    private final GroupRepository gRepo;
 
     @Override
     public Groups save(Groups groups) {
-        return null;
+        log.info("The group is saved {}", groups);
+        return gRepo.save(groups);
     }
 
     @Override
     public void deleteById(Long id) {
-
+        log.info("Group deleted {}", id);
+        gRepo.deleteById(id);
     }
 
     @Override
     public Groups findById(Long id) {
-        return null;
+        log.info("Group found {}", id);
+        return gRepo.findById(id).orElse(null);
     }
 
     @Override
     public List<Groups> findAll() {
-        return null;
+        return gRepo.findAll();
     }
 
     @Override
     public void update(Groups groups, Long id) {
-
+        Groups groups1 = gRepo.getById(id);
+        groups1.setGroupName(groups.getGroupName());
+        groups1.setDataStart(groups.getDataStart());
+        groups1.setDataFinish(groups.getDataFinish());
+        log.info("The gorup has been successfully updated {}", groups);
+        gRepo.save(groups1);
     }
 }
