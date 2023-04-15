@@ -15,7 +15,7 @@ import java.util.List;
 public class Groups {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     @Column(name = "groupName")
     private String groupName;
     @Column(name = "dataStart")
