@@ -19,13 +19,13 @@ public class TestController {
     @GetMapping("/")
     public String product(@RequestParam(name = "title", required = false) String title, Model model) {
         model.addAttribute("auto", testService.listAuto(title));
-        return "test";
+        return "/test/test";
     }
 
     @GetMapping("/product/{id}")
     public String productInfo(@PathVariable Long id, Model model) {
         model.addAttribute("prom", testService.getAutoById(id));
-        return "test-info";
+        return "/test/test-info";
     }
 
     @PostMapping("/product/create")
