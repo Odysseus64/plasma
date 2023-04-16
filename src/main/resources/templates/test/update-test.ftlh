@@ -5,7 +5,7 @@
 </head>
 <body>
 <h2>Editing</h2>
-<form method="post" action="/testing/update/{id}">
+<form method="post" action="/testing/update/${test.id}">
     <input type="hidden" name="id" value="${test.id}">
     <label>Name</label>
     <input type="text" name="name" value="${test.name}">
