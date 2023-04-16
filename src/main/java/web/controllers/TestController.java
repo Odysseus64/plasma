@@ -3,16 +3,15 @@ package web.controllers;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+import web.models.Student;
 import web.models.TestModel;
 import web.servie.TestService;
 
 
 @Controller
 @RequiredArgsConstructor
+@RequestMapping("test")
 public class TestController {
     private final TestService testService;
 
@@ -26,6 +25,12 @@ public class TestController {
     public String productInfo(@PathVariable Long id, Model model) {
         model.addAttribute("prom", testService.getAutoById(id));
         return "/test/test-info";
+    }
+
+    @PatchMapping("/update/{id}")
+    public String update(@ModelAttribute("student") TestModel test, @PathVariable("id") Long id) {
+        testService.update(test, id);
+        return "/test/test-update";
     }
 
     @PostMapping("/product/create")
