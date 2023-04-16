@@ -15,8 +15,8 @@
 
 <#list auto as product>
     <div>
-        <p><b>${product.name} | </b>${product.price} | <a href="/product/${product.id}"><input type="button"
-                                                                                               value="Details"></a></p>
+        <p><b>${product.name} | </b>${product.price} |
+            <a href="/product/${product.id}"><input type="button" value="Details"></a></p>
     </div>
 <#else>
     <h3>There are no products :(</h3>
