@@ -9,7 +9,6 @@ import web.servie.metods.CompanyMethods;
 
 import java.util.List;
 
-@Slf4j
 @Service
 @RequiredArgsConstructor
 public class CompanyService implements CompanyMethods {
@@ -17,19 +16,16 @@ public class CompanyService implements CompanyMethods {
 
     @Override
     public Company save(Company company) {
-        log.info("The company is saved! {}", company);
         return cRepo.save(company);
     }
 
     @Override
     public void deleteById(Long id) {
-        log.info("Company deleted {}", id);
         cRepo.deleteById(id);
     }
 
     @Override
     public Company findById(Long id) {
-        log.info("Company found {}", id);
         return cRepo.findById(id).orElse(null);
     }
 
@@ -40,7 +36,6 @@ public class CompanyService implements CompanyMethods {
 
     @Override
     public void update(Company company, Long id) {
-        log.info("The company has been successfully updated {}", company);
         Company company1 = cRepo.getById(id);
         company1.setCompanyName(company.getCompanyName());
         company1.setLocatedCountry(company.getLocatedCountry());

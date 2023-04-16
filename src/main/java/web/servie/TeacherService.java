@@ -9,7 +9,6 @@ import web.servie.metods.TeacherMethods;
 
 import java.util.List;
 
-@Slf4j
 @Service
 @RequiredArgsConstructor
 public class TeacherService implements TeacherMethods {
@@ -17,19 +16,16 @@ public class TeacherService implements TeacherMethods {
 
     @Override
     public Teacher save(Teacher teacher) {
-        log.info("Teacher saved {}", teacher);
         return tRepo.save(teacher);
     }
 
     @Override
     public void deleteById(Long id) {
-        log.info("Teacher deleted {}", id);
         tRepo.deleteById(id);
     }
 
     @Override
     public Teacher findById(Long id) {
-        log.info("Teacher found {}", id);
         return tRepo.findById(id).orElse(null);
     }
 
@@ -40,7 +36,6 @@ public class TeacherService implements TeacherMethods {
 
     @Override
     public void update(Teacher teacher, Long id) {
-        log.info("The teacher had been successfully update {}", teacher);
         Teacher teacher1 = tRepo.getById(id);
         teacher1.setEmail(teacher.getEmail());
         teacher1.setFirst_name(teacher.getFirst_name());

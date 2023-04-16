@@ -9,7 +9,6 @@ import web.servie.metods.GroupMethods;
 
 import java.util.List;
 
-@Slf4j
 @Service
 @RequiredArgsConstructor
 public class GroupService implements GroupMethods {
@@ -17,19 +16,16 @@ public class GroupService implements GroupMethods {
 
     @Override
     public Groups save(Groups groups) {
-        log.info("The group is saved {}", groups);
         return gRepo.save(groups);
     }
 
     @Override
     public void deleteById(Long id) {
-        log.info("Group deleted {}", id);
         gRepo.deleteById(id);
     }
 
     @Override
     public Groups findById(Long id) {
-        log.info("Group found {}", id);
         return gRepo.findById(id).orElse(null);
     }
 
@@ -44,7 +40,6 @@ public class GroupService implements GroupMethods {
         groups1.setGroupName(groups.getGroupName());
         groups1.setDataStart(groups.getDataStart());
         groups1.setDataFinish(groups.getDataFinish());
-        log.info("The gorup has been successfully updated {}", groups);
         gRepo.save(groups1);
     }
 }

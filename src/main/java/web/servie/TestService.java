@@ -8,7 +8,6 @@ import web.repository.TestRepository;
 
 import java.util.List;
 
-@Slf4j
 @Service
 @RequiredArgsConstructor
 public class TestService {
@@ -18,27 +17,15 @@ public class TestService {
         return autoRepository.findAll();
     }
 
-    public void save(TestModel testModel) {
+    public void saveTest(TestModel testModel) {
         autoRepository.save(testModel);
     }
 
-    public void delete(Long id) {
-        log.info("Delete {}", id);
+    public void deleteTest(Long id) {
         autoRepository.deleteById(id);
     }
 
-    public TestModel getAutoById(Long id) {
-        log.info("Get Auto By Id {}", id);
+    public TestModel getTestById(Long id) {
         return autoRepository.findById(id).orElse(null);
-    }
-
-    public void update(TestModel model, Long id) {
-        log.info("Updated {}", model);
-        TestModel testModel = autoRepository.findById(id).orElse(null);
-        testModel.setName(model.getName());
-        testModel.setCity(model.getCity());
-        testModel.setPrice(model.getPrice());
-        testModel.setOwner(model.getOwner());
-        autoRepository.save(testModel);
     }
 }

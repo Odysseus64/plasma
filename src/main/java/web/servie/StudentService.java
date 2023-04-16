@@ -10,7 +10,6 @@ import web.servie.metods.StudentMethods;
 
 import java.util.List;
 
-@Slf4j
 @Service
 @RequiredArgsConstructor
 public class StudentService implements StudentMethods {
@@ -18,19 +17,16 @@ public class StudentService implements StudentMethods {
 
     @Override
     public Student save(Student student) {
-        log.info("Student saved {}", student);
         return sRepo.save(student);
     }
 
     @Override
     public void deleteById(Long id) {
-        log.info("Student deleted {}", id);
         sRepo.deleteById(id);
     }
 
     @Override
     public Student findById(Long id) {
-        log.info("Student found {}", id);
         return sRepo.findById(id).orElse(null);
     }
 
@@ -41,7 +37,6 @@ public class StudentService implements StudentMethods {
 
     @Override
     public void update(Student student, Long id) {
-        log.info("The student has been successfully update {}", student);
         Student student1 = sRepo.getById(id);
         student1.setEmail(student.getEmail());
         student1.setFirst_name(student.getFirst_name());
