@@ -1,6 +1,5 @@
-<!--
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html>
 <meta charset="ISO-8859-1">
 <head>
     <title>Auto Star</title>
@@ -9,19 +8,18 @@
 <h1>Auto Star</h1>
 <hr>
 <h2>More detailed</h2>
-<b  th:text="prom.name">Name: </b><br>
-<b  th:text="prom.model">Model: </b><br>
-<b  th:text="prom.city">City: </b><br>
-<b  th:text="prom.owner">Owner: </b><br>
-<b  th:text="prom.price">Price: </b><br>
+<b>Name: </b>${prom.name}<br>
+<b>Model: </b>${prom.model}<br>
+<b>City: </b>${prom.city}<br>
+<b>Owner: </b>${prom.owner}<br>
+<b>Price: </b>${prom.price}<br>
 <hr>
-<form th:href="@{/product/delete/(prom=${prom.id})}" method="post">
+<form action="/product/delete/${prom.id}" method="post">
     <input type="submit" value="DELETE">
 </form>
 </body>
 </html>
-<style>
-    body {
+<style>body {
         font-family: Arial, sans-serif;
         background-color: #f0f0f0;
     }
@@ -65,4 +63,3 @@
         background-color: #c0392b;
     }
 </style>
--->
