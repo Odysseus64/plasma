@@ -35,4 +35,14 @@ public class TestService {
         log.info("Get Auto By Id {}", id);
         return autoRepository.findById(id).orElse(null);
     }
+
+    public void update(TestModel model, Long id) {
+        log.info("Updated {}", model);
+        TestModel testModel = autoRepository.findById(id).orElse(null);
+        testModel.setName(model.getName());
+        testModel.setCity(model.getCity());
+        testModel.setPrice(model.getPrice());
+        testModel.setOwner(model.getOwner());
+        autoRepository.save(testModel);
+    }
 }

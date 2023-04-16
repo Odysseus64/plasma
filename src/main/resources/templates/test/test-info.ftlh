@@ -17,6 +17,9 @@
 <form action="/product/delete/${prom.id}" method="post">
     <input type="submit" value="DELETE">
 </form>
+<form action="/update/${prom.id}" method="post">
+    <input type="submit" value="UPDATE">
+</form>
 </body>
 </html>
 <style>
