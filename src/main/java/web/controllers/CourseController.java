@@ -25,6 +25,6 @@ public class CourseController {
         return "/course/course-list";
     }
     /*
-    * https://youtu.be/NA6n1Xu7o_g Продолжить после перерыва
+    * https://youtu.be/NA6n1Xu7o_g Продолжить после перерыва Осталось только контроллеры и Верстка сайта
     */
 }
