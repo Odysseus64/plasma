@@ -4,7 +4,10 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import web.models.Company;
 import web.servie.CompanyService;
+
+import java.util.List;
 
 
 @Controller
@@ -15,7 +18,14 @@ public class CompanyController {
 
     @GetMapping("/get/all")
     public String getAll(Model model) {
-        model.addAttribute("all", service.findAll());
+        List<Company> all = service.findAll();
+        model.addAttribute("all", all);
         return "/company/company-list";
+    }
+
+    @PostMapping("/delete")
+    public String deleteById(Long id) {
+        service.deleteById(id);
+        return "";
     }
 }
