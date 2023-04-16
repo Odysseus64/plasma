@@ -6,5 +6,4 @@ import web.models.TestModel;
 import java.util.List;
 
 public interface TestRepository extends JpaRepository<TestModel, Long>{
-    List<TestModel> findByName(String title);
 }

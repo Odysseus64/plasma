@@ -14,11 +14,7 @@ import java.util.List;
 public class TestService {
     private final TestRepository autoRepository;
 
-    public List<TestModel> listAuto(String title) {
-        log.info("Successfully found {}", title);
-        if (title != null) {
-            return autoRepository.findByName(title);
-        }
+    public List<TestModel> findAll() {
         return autoRepository.findAll();
     }
 
