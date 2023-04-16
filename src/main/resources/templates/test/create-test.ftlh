@@ -23,7 +23,6 @@
 </html>
 
 <style>
-    /* стилизация заголовка */
     h2 {
         color: #4CAF50;
         font-size: 30px;
@@ -31,13 +30,11 @@
         margin-bottom: 30px;
     }
 
-    /* стилизация меток */
     label {
         font-size: 20px;
         margin-right: 10px;
     }
 
-    /* стилизация полей ввода */
     input[type=text], input[type=number] {
         width: 50%;
         padding: 12px 20px;
@@ -47,7 +44,6 @@
         border-radius: 4px;
     }
 
-    /* стилизация кнопки */
     button[type=submit] {
         background-color: #4CAF50;
         color: white;
@@ -62,14 +58,12 @@
         background-color: #45a049;
     }
 
-    /* стилизация ссылки */
     a {
         text-decoration: none;
         color: #4CAF50;
     }
 
-    /* стилизация кнопки "View" */
-    button[type=button] {
+    button {
         background-color: #4CAF50;
         color: white;
         padding: 14px 20px;
@@ -82,5 +76,4 @@
     button[type=button]:hover {
         background-color: #45a049;
     }
-
 </style>

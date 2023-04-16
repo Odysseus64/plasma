@@ -41,6 +41,16 @@ public class TestController {
         return "redirect:/testing/";
     }
 
+    @GetMapping("/update/{id}")
+    public String showUpdateForm(@PathVariable("id") Long id, Model model) {
+        TestModel test = testService.getTestById(id);
+        if (test != null) {
+            model.addAttribute("test", test);
+            return "/test/update-test";
+        }
+        return "redirect:/testing/";
+    }
+
     @PostMapping("/update/{id}")
     public String update(@PathVariable("id") Long id, @ModelAttribute("test") TestModel test) {
         TestModel existingTest = testService.getTestById(id);
@@ -51,16 +61,6 @@ public class TestController {
         existingTest.setPrice(test.getPrice());
         testService.saveTest(existingTest);
         return "redirect:/testing/get/all";
-    }
-
-    @GetMapping("/update/{id}")
-    public String showUpdateForm(@PathVariable("id") Long id, Model model) {
-        TestModel test = testService.getTestById(id);
-        if (test != null) {
-            model.addAttribute("test", test);
-            return "/test/update-test";
-        }
-        return "redirect:/testing/";
     }
 
     @PostMapping("/delete/{id}")
