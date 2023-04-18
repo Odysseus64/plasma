@@ -5,9 +5,8 @@ import web.models.Teacher;
 import java.util.List;
 
 public interface TeacherMethods {
+    List<Teacher> findAll();
+    Teacher findById(Long id);
     Teacher save(Teacher teacher);
     void deleteById(Long id);
-    Teacher findById(Long id);
-    List<Teacher> findAll();
-    void update (Teacher teacher, Long id);
 }

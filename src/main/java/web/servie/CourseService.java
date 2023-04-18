@@ -32,10 +32,4 @@ public class CourseService implements CourseMethods {
         return cRepo.findAll();
     }
 
-    @Override
-    public void update(Course course, Long id) {
-        Course course1 = cRepo.getOne(id);
-        course1.setCourName(course.getCourName());
-        course1.setDuration(course.getDuration());
-    }
 }

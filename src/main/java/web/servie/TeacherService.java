@@ -14,13 +14,8 @@ public class TeacherService implements TeacherMethods {
     private final TeacherRepository tRepo;
 
     @Override
-    public Teacher save(Teacher teacher) {
-        return tRepo.save(teacher);
-    }
-
-    @Override
-    public void deleteById(Long id) {
-        tRepo.deleteById(id);
+    public List<Teacher> findAll() {
+        return tRepo.findAll();
     }
 
     @Override
@@ -29,16 +24,12 @@ public class TeacherService implements TeacherMethods {
     }
 
     @Override
-    public List<Teacher> findAll() {
-        return tRepo.findAll();
+    public Teacher save(Teacher teacher) {
+        return tRepo.save(teacher);
     }
 
     @Override
-    public void update(Teacher teacher, Long id) {
-        Teacher teacher1 = tRepo.getOne(id);
-        teacher1.setEmail(teacher.getEmail());
-        teacher1.setFirst_name(teacher.getFirst_name());
-        teacher1.setLast_name(teacher.getLast_name());
-        tRepo.save(teacher1);
+    public void deleteById(Long id) {
+        tRepo.deleteById(id);
     }
 }
