@@ -35,7 +35,7 @@ public class TeacherService implements TeacherMethods {
 
     @Override
     public void update(Teacher teacher, Long id) {
-        Teacher teacher1 = tRepo.getById(id);
+        Teacher teacher1 = tRepo.getOne(id);
         teacher1.setEmail(teacher.getEmail());
         teacher1.setFirst_name(teacher.getFirst_name());
         teacher1.setLast_name(teacher.getLast_name());

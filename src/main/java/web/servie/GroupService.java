@@ -35,7 +35,7 @@ public class GroupService implements GroupMethods {
 
     @Override
     public void update(Groups groups, Long id) {
-        Groups groups1 = gRepo.getById(id);
+        Groups groups1 = gRepo.getOne(id);
         groups1.setGroupName(groups.getGroupName());
         groups1.setDataStart(groups.getDataStart());
         groups1.setDataFinish(groups.getDataFinish());

@@ -35,7 +35,7 @@ public class CompanyService implements CompanyMethods {
 
     @Override
     public void update(Company company, Long id) {
-        Company company1 = cRepo.getById(id);
+        Company company1 = cRepo.getOne(id);
         company1.setCompanyName(company.getCompanyName());
         company1.setLocatedCountry(company.getLocatedCountry());
         cRepo.save(company1);

@@ -36,7 +36,7 @@ public class StudentService implements StudentMethods {
 
     @Override
     public void update(Student student, Long id) {
-        Student student1 = sRepo.getById(id);
+        Student student1 = sRepo.getOne(id);
         student1.setEmail(student.getEmail());
         student1.setFirst_name(student.getFirst_name());
         student1.setLast_name(student.getLast_name());
