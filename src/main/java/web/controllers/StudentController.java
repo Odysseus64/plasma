@@ -1,6 +1,7 @@
 package web.controllers;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -11,8 +12,8 @@ import web.servie.StudentService;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@RequiredArgsConstructor
 @Controller
+@RequiredArgsConstructor
 @RequestMapping("/student")
 public class StudentController {
     private final GroupService groupService;
@@ -46,10 +47,10 @@ public class StudentController {
         return "redirect:/students?groupId=" + id;
     }
 
-    @PatchMapping("/{id}")
+    @PatchMapping("/update/{id}")
     public String update(@ModelAttribute("student") Student student, @PathVariable("id") Long id, @RequestParam("group_id") Long group_id) {
         student.setGroup(groupService.findById(group_id));
-        studentService.update(student, id);
+        studentService.save(student); //Закончить
         return "redirect:/students?groupId=" + group_id;
     }
 

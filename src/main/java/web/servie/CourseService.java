@@ -8,6 +8,21 @@ import web.servie.metods.CourseMethods;
 
 import java.util.List;
 
+
+
+
+
+/*
+* Привет как только увидишь это сообщение начни писать контроллеры для всех моделей
+* Думаю перечислять не стоит посмотри коды у своих знакомых ютуб гугл и чат бота */
+
+
+
+
+
+
+
+
 @Service
 @RequiredArgsConstructor
 public class CourseService implements CourseMethods {
@@ -31,5 +46,4 @@ public class CourseService implements CourseMethods {
     public List<Course> findAll() {
         return cRepo.findAll();
     }
-
 }
