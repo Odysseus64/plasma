@@ -9,4 +9,5 @@ public interface CompanyMethods {
     Company save(Company company);
     Company findById(Long id);
     void deleteById(Long id);
+    void update(Long id, Company company);
 }

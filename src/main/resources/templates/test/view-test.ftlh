@@ -31,7 +31,8 @@
         <td>${pro.city}</td>
         <td>${pro.price}</td>
         <td>${pro.model}</td>
-        <td><a href="/testing/edit/${pro.id}">
+        <td>
+            <a href="/testing/edit/${pro.id}">
                 <button>EDIT</button>
             </a></td>
         <td>

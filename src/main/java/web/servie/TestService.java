@@ -27,4 +27,13 @@ public class TestService {
     public TestModel getTestById(Long id) {
         return autoRepository.findById(id).orElse(null);
     }
+    public void update(Long id, TestModel model){
+        TestModel existingTest = autoRepository.findById(id).orElse(null);
+        existingTest.setName(model.getName());
+        existingTest.setOwner(model.getOwner());
+        existingTest.setCity(model.getCity());
+        existingTest.setModel(model.getModel());
+        existingTest.setPrice(model.getPrice());
+        autoRepository.save(existingTest);
+    }
 }

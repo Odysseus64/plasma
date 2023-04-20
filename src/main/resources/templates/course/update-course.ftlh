@@ -5,16 +5,16 @@
 </head>
 <body>
 <h2>EDIT TEACHER</h2>
-<form method="post" action="/company/edit/${get.id}">
+<form method="post" action="/course/edit/${get.id}">
     <input type="hidden" name="id" value="${get.id}">
-    <label>COMPANY NAME</label>
+    <label>COURSE NAME</label>
     <label>
-        <input type="text" name="companyName" value="${get.companyName}">
+        <input type="text" name="courName" value="${get.courName}">
     </label>
     <br>
-    <label>LOCATED COUNTRY</label>
+    <label>DURATION</label>
     <label>
-        <input type="text" name="locatedCountry" value="${get.locatedCountry}">
+        <input type="text" name="duration" value="${get.duration}">
     </label>
     <br>
     <input type="submit" value="ENTER">

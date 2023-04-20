@@ -9,4 +9,5 @@ public interface TeacherMethods {
     Teacher findById(Long id);
     Teacher save(Teacher teacher);
     void deleteById(Long id);
+    void update(Long id, Teacher teacher);
 }

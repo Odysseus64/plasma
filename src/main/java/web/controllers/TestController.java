@@ -44,19 +44,13 @@ public class TestController {
     @GetMapping("/edit/{id}")
     public String showUpdateForm(@PathVariable("id") Long id, Model model) {
         TestModel test = testService.getTestById(id);
-        model.addAttribute("test",test);
+        model.addAttribute("test", test);
         return "/test/update-test";
     }
 
     @PostMapping("/edit/{id}")
     public String update(@PathVariable("id") Long id, @ModelAttribute("test") TestModel test) {
-        TestModel existingTest = testService.getTestById(id);
-        existingTest.setName(test.getName());
-        existingTest.setOwner(test.getOwner());
-        existingTest.setCity(test.getCity());
-        existingTest.setModel(test.getModel());
-        existingTest.setPrice(test.getPrice());
-        testService.saveTest(existingTest);
+        testService.update(id, test);
         return "redirect:/testing/get/all";
     }
 

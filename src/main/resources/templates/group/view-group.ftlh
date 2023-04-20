@@ -6,36 +6,34 @@
 </head>
 <body>
 <h1>Teacher</h1>
-<a href="/student/save">
+<a href="/group/save">
     <button>NEW</button>
 </a>
 <table border="1px">
     <thead>
     <tr>
         <th>ID</th>
-        <th>FIRST NAME</th>
-        <th>LAST NAME</th>
-        <th>EMAIL</th>
-        <th>PASSWORD</th>
+        <th>GROUP NAME</th>
+        <th>DATE OF START</th>
+        <th>DATE OF FINISH</th>
         <th>Edit</th>
         <th>Delete</th>
     </tr>
     </thead>
     <tbody>
-    <#list student as circle>
+    <#list group as circle>
     <tr>
         <td>${circle.id}</td>
-        <td>${circle.first_name}</td>
-        <td>${circle.last_name}</td>
-        <td>${circle.email}</td>
-        <td>${circle.password}</td>
+        <td>${circle.groupName}</td>
+        <td>${circle.dataStart}</td>
+        <td>${circle.dataFinish}</td>
         <td>
-            <a href="/student/edit/${circle.id}">
+            <a href="/group/edit/${circle.id}">
                 <button>EDIT</button>
             </a>
         </td>
         <td>
-            <form method="post" action="/student/delete/${circle.id}">
+            <form method="post" action="/group/delete/${circle.id}">
                 <input type="submit" value="DELETE">
             </form>
         </td>

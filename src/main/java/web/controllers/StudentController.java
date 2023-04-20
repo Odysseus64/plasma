@@ -1,62 +1,61 @@
 package web.controllers;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import web.models.Student;
-import web.servie.GroupService;
 import web.servie.StudentService;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("/student")
 public class StudentController {
-    private final GroupService groupService;
-    private final StudentService studentService;
+    private final StudentService service;
 
-    @GetMapping("/")
-    public String index(@RequestParam("id") Long id, Model model) {
-        List<Student> students = studentService.findAll().stream()
-                .filter(bound -> bound.getGroup().getId().equals(id))
-                .collect(Collectors.toList());
-        model.addAttribute("all", students);
-        return "/student/student-page";
+    //'MAIN' DELETE, UPDATE, FIND ALL
+    @GetMapping("/student/main")
+    public String main(Model model) {
+        List<Student> students = service.findAll();
+        model.addAttribute("student", students);
+        return "/student/view-student";
     }
 
-    @GetMapping("/add-student")
-    public String saveStudent(Model model) {
-        model.addAttribute("add", new Student());
-        return "/student/add-student";
+    //SAVE
+    @GetMapping("/student/save")
+    public String saveView(Model model) {
+        model.addAttribute("save", new Student());
+        return "/student/create-student";
     }
 
-    @GetMapping("/{id}/edit")
-    public String edit(Model model, @PathVariable("id") Long id) {
-        model.addAttribute("edit", studentService.findById(id));
+    //RETURN SAVE TO MAIN
+    @PostMapping("/student/save")
+    public String save(Student student) {
+        service.save(student);
+        return "redirect:/student/main";
+    }
+
+    //DELETE ELEMENT BY ID
+    @PostMapping("/student/delete/{id}")
+    public String delete(@PathVariable("id") Long id) {
+        service.deleteById(id);
+        return "redirect:/student/main";
+    }
+
+    //VIEW EDIT
+    @GetMapping("/student/edit/{id}")
+    public String showEdit(@PathVariable("id") Long id, Model model) {
+        Student student = service.findById(id);
+        model.addAttribute("get", student);
         return "/student/update-student";
     }
 
-    @PostMapping("/save/student")
-    public String createStudent(@ModelAttribute("student") Student student, @RequestParam("id") Long id) {
-        student.setGroup(groupService.findById(id));
-        studentService.save(student);
-        return "redirect:/students?groupId=" + id;
-    }
-
-    @PatchMapping("/update/{id}")
-    public String update(@ModelAttribute("student") Student student, @PathVariable("id") Long id, @RequestParam("group_id") Long group_id) {
-        student.setGroup(groupService.findById(group_id));
-        studentService.save(student); //Закончить
-        return "redirect:/students?groupId=" + group_id;
-    }
-
-    @DeleteMapping("/delete/{id}")
-    public String delete(@PathVariable("id") Long id, @RequestParam("group_id") Long group_id) {
-        studentService.deleteById(id);
-        return "redirect:/students?groupId=" + group_id;
+    //EDIT
+    @PostMapping("/student/edit/{id}")
+    public String edit(@PathVariable("id") Long id,
+                       @ModelAttribute("student") Student student) {
+        service.update(id, student);
+        return "redirect:/student/main";
     }
 }
