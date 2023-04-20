@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Create teacher</title>
 </head>
 <body>
-<h2>Create Test</h2>
+<h2>Create teacher</h2>
 <form method="post" action="/teacher/save">
     <label>First Name</label>
     <label>

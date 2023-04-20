@@ -5,11 +5,11 @@
     <title>Title</title>
 </head>
 <body>
-<h2>Create Test</h2>
+<h2>SAVE COMPANY</h2>
 <form method="post" action="/company/save">
     <label>COMPANY NAME</label>
     <label>
-        <input type="text" name="courName" required>
+        <input type="text" name="companyName" required>
     </label>
     <br>
     <br>

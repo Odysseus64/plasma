@@ -4,7 +4,7 @@
     <title>Edit</title>
 </head>
 <body>
-<h2>EDIT TEACHER</h2>
+<h2>EDIT Group</h2>
 <form method="post" action="/group/edit/${pol.id}">
     <input type="hidden" name="id" value="${pol.id}">
     <label>DATE OF START</label>

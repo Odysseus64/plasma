@@ -4,7 +4,7 @@
     <title>Edit</title>
 </head>
 <body>
-<h2>EDIT TEACHER</h2>
+<h2>EDIT COMPANY</h2>
 <form method="post" action="/company/edit/${get.id}">
     <input type="hidden" name="id" value="${get.id}">
     <label>COMPANY NAME</label>

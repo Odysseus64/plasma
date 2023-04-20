@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Teacher module</title>
+    <title>Student module</title>
     <meta charset="UTF-8"/>
 </head>
 <body>
-<h1>Teacher</h1>
+<h1>Student</h1>
 <a href="/student/save">
     <button>NEW</button>
+</a>
+<a href="/company/main">
+    <button>COMPANY MAIN</button>
 </a>
 <table border="1px">
     <thead>
