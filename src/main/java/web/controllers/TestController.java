@@ -16,14 +16,14 @@ public class TestController {
     private final TestService testService;
 
     @GetMapping("/")
-    public String findAll(Model model) {
+    public String main(Model model) {
         List<TestModel> list = testService.findAll();
         model.addAttribute("test", list);
         return "/test/create-test";
     }
 
     @GetMapping("/get/all")
-    public String getById(Model model) {
+    public String findAll(Model model) {
         model.addAttribute("prom", testService.findAll());
         return "/test/view-test";
     }
@@ -41,17 +41,14 @@ public class TestController {
         return "redirect:/testing/";
     }
 
-    @GetMapping("/update/{id}")
+    @GetMapping("/edit/{id}")
     public String showUpdateForm(@PathVariable("id") Long id, Model model) {
         TestModel test = testService.getTestById(id);
-        if (test != null) {
-            model.addAttribute("test", test);
-            return "/test/update-test";
-        }
-        return "redirect:/testing/";
+        model.addAttribute("test",test);
+        return "/test/update-test";
     }
 
-    @PostMapping("/update/{id}")
+    @PostMapping("/edit/{id}")
     public String update(@PathVariable("id") Long id, @ModelAttribute("test") TestModel test) {
         TestModel existingTest = testService.getTestById(id);
         existingTest.setName(test.getName());
