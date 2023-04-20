@@ -9,6 +9,9 @@
 <a href="/teacher/save">
     <button>NEW</button>
 </a>
+<a href="/company/main">
+    <button>COMPANY MAIN</button>
+</a>
 <table border="1px">
     <thead>
     <tr>

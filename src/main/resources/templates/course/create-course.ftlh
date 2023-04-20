@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<h2>Create Test</h2>
+<h2>Create course</h2>
 <form method="post" action="/course/save">
     <label>COURSE NAME</label>
     <label>

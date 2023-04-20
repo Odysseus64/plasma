@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<h2>Create Test</h2>
+<h2>Create student</h2>
 <form method="post" action="/student/save">
     <label>First Name</label>
     <label>

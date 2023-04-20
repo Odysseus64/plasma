@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<h2>Create Test</h2>
+<h2>Create group</h2>
 <form method="post" action="/group/save">
     <label>First Name</label>
     <label>

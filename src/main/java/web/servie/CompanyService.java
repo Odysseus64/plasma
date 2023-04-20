@@ -28,6 +28,7 @@ public class CompanyService implements CompanyMethods {
         Company comp = cRepo.findById(id).orElse(null);
         assert comp != null;
         comp.setCompanyName(company.getCompanyName());
+        comp.setLocatedCountry(company.getLocatedCountry());
         cRepo.save(comp);
     }
 

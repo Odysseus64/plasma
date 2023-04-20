@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Teacher module</title>
+    <title>Course module</title>
     <meta charset="UTF-8"/>
 </head>
 <body>
-<h1>Teacher</h1>
+<h1>Course</h1>
+
 <a href="/course/save">
     <button>NEW</button>
 </a>
+<a href="/company/main">
+    <button>COMPANY MAIN</button>
+</a>
+
 <table border="1px">
     <thead>
     <tr>
         <th>ID</th>
         <th>NAME</th>
         <th>DURATION</th>
+        <th>STUDENT</th>
         <th>Edit</th>
         <th>Delete</th>
     </tr>
@@ -25,6 +31,11 @@
         <td>${circle.id}</td>
         <td>${circle.courName}</td>
         <td>${circle.duration}</td>
+        <td>
+            <a href="/student/main">
+                <button>STUDENT</button>
+            </a>
+        </td>
         <td>
             <a href="/course/edit/${circle.id}">
                 <button>EDIT</button>
