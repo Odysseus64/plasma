@@ -24,6 +24,14 @@ public class CompanyService implements CompanyMethods {
     }
 
     @Override
+    public void update(Long id, Company company) {
+        Company comp = cRepo.findById(id).orElse(null);
+        assert comp != null;
+        comp.setCompanyName(company.getCompanyName());
+        cRepo.save(comp);
+    }
+
+    @Override
     public Company findById(Long id) {
         return cRepo.findById(id).orElse(null);
     }

@@ -32,4 +32,14 @@ public class TeacherService implements TeacherMethods {
     public void deleteById(Long id) {
         tRepo.deleteById(id);
     }
+    @Override
+    public void update(Long id, Teacher teach){
+        Teacher study = tRepo.findById(id).orElse(null);
+        assert study != null;
+        study.setFirst_name(teach.getFirst_name());
+        study.setLast_name(teach.getLast_name());
+        study.setEmail(teach.getEmail());
+        study.setPassword(teach.getPassword());
+        tRepo.save(study);
+    }
 }

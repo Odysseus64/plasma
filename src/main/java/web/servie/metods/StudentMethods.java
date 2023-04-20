@@ -9,4 +9,5 @@ public interface StudentMethods {
     Student findById(Long id);
     Student save(Student student);
     void deleteById(Long id);
+    void update (Long id, Student student);
 }

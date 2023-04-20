@@ -9,4 +9,5 @@ public interface CourseMethods {
     Course save(Course course);
     Course findById(Long id);
     void deleteById(Long id);
+    void update(Long id, Course course);
 }

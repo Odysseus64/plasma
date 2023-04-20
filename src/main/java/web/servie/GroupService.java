@@ -24,6 +24,16 @@ public class GroupService implements GroupMethods {
     }
 
     @Override
+    public void update(Long id, Groups news) {
+        Groups group = gRepo.findById(id).orElse(null);
+        assert group != null;
+        group.setGroupName(news.getGroupName());
+        group.setDataStart(news.getDataStart());
+        group.setDataFinish(news.getDataFinish());
+        gRepo.save(group);
+    }
+
+    @Override
     public Groups findById(Long id) {
         return gRepo.findById(id).orElse(null);
     }

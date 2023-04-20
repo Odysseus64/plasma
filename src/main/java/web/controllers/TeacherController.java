@@ -42,12 +42,6 @@ public class TeacherController {
         service.deleteById(id);
         return "redirect:/teacher/main";
     }
-    //FIND BY ID
-    @GetMapping("/teacher/findById/{id}")
-    public String findById(@PathVariable("id") Long id){
-        service.findById(id);
-        return "redirect:/teacher/main";
-    }
     //VIEW EDIT
     @GetMapping("/teacher/edit/{id}")
     public String showEdit(@PathVariable("id") Long id, Model model){
@@ -59,12 +53,7 @@ public class TeacherController {
     @PostMapping("/teacher/edit/{id}")
     public String edit(@PathVariable("id") Long id,
                        @ModelAttribute("teach") Teacher teach){
-        Teacher study = service.findById(id);
-        study.setFirst_name(teach.getFirst_name());
-        study.setLast_name(teach.getLast_name());
-        study.setEmail(teach.getEmail());
-        study.setPassword(teach.getPassword());
-        service.save(study);
+        service.update(id,teach);
         return "redirect:/teacher/main";
     }
 }

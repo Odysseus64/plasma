@@ -9,4 +9,5 @@ public interface GroupMethods {
     Groups save(Groups groups);
     Groups findById(Long id);
     void deleteById(Long id);
+    void update(Long id, Groups groups);
 }

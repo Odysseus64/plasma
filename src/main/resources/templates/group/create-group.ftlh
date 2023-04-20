@@ -6,22 +6,22 @@
 </head>
 <body>
 <h2>Create Test</h2>
-<form method="post" action="/student/save">
+<form method="post" action="/group/save">
     <label>First Name</label>
     <label>
-        <input type="text" name="first_name" required>
+        <input type="text" name="dataStart" required>
     </label>
     <br>
     <br>
     <label>LAST NAME</label>
     <label>
-        <input type="text" name="last_name" required>
+        <input type="text" name="dataFinish" required>
     </label>
     <br>
     <br>
     <label>EMAIL</label>
     <label>
-        <input type="text" name="email" required>
+        <input type="text" name="groupName" required>
     </label>
     <br>
     <br>
@@ -33,7 +33,7 @@
     <br>
     <button type="submit">SUBMIT</button>
 </form>
-<a href="/student/main">
+<a href="/group/main">
     <button>MAIN</button>
 </a>
 </body>
