@@ -48,3 +48,58 @@
 </table>
 </body>
 </html>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    h1 {
+        margin-top: 0;
+    }
+
+    a button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        border-radius: 3px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+    a button:hover {
+        background-color: #0062cc;
+    }
+
+    table {
+        border-collapse: collapse;
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    table th, table td {
+        padding: 10px;
+        border: 1px solid #ccc;
+    }
+
+    table th {
+        background-color: #f2f2f2;
+        text-align: left;
+    }
+
+    form input[type="submit"] {
+        background-color: #dc3545;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    form input[type="submit"]:hover {
+        background-color: #c823
+    }
+
+</style>
