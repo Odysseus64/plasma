@@ -52,3 +52,62 @@
 </table>
 </body>
 </html>
+<style>
+    /* убираем отступы у тегов body и table */
+    body, table {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* добавляем стили для заголовка */
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    /* добавляем стили для кнопок */
+    button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    /* добавляем стили для таблицы */
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    /* добавляем стили для ячеек таблицы */
+    th, td {
+        padding: 10px;
+        text-align: left;
+    }
+
+    /* добавляем стили для ячеек таблицы заголовков */
+    th {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+    /* добавляем стили для кнопок Edit и Delete */
+    td button {
+        padding: 5px 10px;
+        background-color: #fff;
+        color: #007bff;
+        border: 1px solid #007bff;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* добавляем стили при наведении на кнопки Edit и Delete */
+    td button:hover {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+</style>

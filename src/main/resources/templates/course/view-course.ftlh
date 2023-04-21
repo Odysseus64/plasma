@@ -52,3 +52,65 @@
 </table>
 </body>
 </html>
+<style>
+    table {
+        border-collapse: collapse;
+        margin: 20px 0;
+        width: 100%;
+    }
+
+    th,
+    td {
+        border: 1px solid black;
+        padding: 10px;
+    }
+
+    th {
+        background-color: #eee;
+    }
+
+    button {
+        padding: 5px 10px;
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    a:hover {
+        color: #4CAF50;
+    }
+
+    form {
+        margin: 20px 0;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input[type="text"] {
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    button[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #3e8e41;
+    }
+
+</style>
